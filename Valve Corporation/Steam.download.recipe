@@ -10,8 +10,8 @@
 	<string>com.github.macprince.download.Steam</string>
 	<key>Input</key>
 	<dict>
-		<key>DOWNLOAD_URL</key>
-		<string>https://steamcdn-a.akamaihd.net/client/installer/steam.dmg</string>
+		<key>BASE_URL</key>
+		<string>http://store.steampowered.com/about/</string>
 		<key>NAME</key>
 		<string>Steam</string>
 	</dict>
@@ -20,12 +20,23 @@
 	<key>Process</key>
 	<array>
 		<dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+			<key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>%BASE_URL%</string>
+				<key>re_pattern</key>
+				<string>((?P&lt;download_url&gt;https://.*\.dmg)</string>
+			</dict>
+		</dict>
+		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
 				<key>url</key>
-				<string>%DOWNLOAD_URL%</string>
+				<string>%download_url%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
