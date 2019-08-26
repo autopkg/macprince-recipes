@@ -7,7 +7,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of VideoMonkey and imports it into Munki.</string>
 	<key>Identifier</key>
-	<string>org.district158.munki.VideoMonkey</string>
+	<string>com.github.macprince.munki.VideoMonkey</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
@@ -35,7 +35,7 @@
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
 	<key>ParentRecipe</key>
-	<string>org.district158.download.VideoMonkey</string>
+	<string>com.github.macprince.download.VideoMonkey</string>
 	<key>Process</key>
 	<array>
 		<dict>

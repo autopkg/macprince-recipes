@@ -7,7 +7,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of VideoMonkey and creates a package.</string>
 	<key>Identifier</key>
-	<string>org.district158.pkg.VideoMonkey</string>
+	<string>com.github.macprince.pkg.VideoMonkey</string>
 	<key>Input</key>
 	<dict>
 		<key>BUNDLE_ID</key>
@@ -18,7 +18,7 @@
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
 	<key>ParentRecipe</key>
-	<string>org.district158.download.VideoMonkey</string>
+	<string>com.github.macprince.download.VideoMonkey</string>
 	<key>Process</key>
 	<array>
 		<dict>
