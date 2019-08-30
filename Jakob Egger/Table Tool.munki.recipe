@@ -24,11 +24,11 @@
 			<string>A simple CSV editor for the Mac</string>
 			<key>developer</key>
 			<string>Jakob Egger</string>
+			<key>category</key>
+			<string>Utilities</string>
 			<key>display_name</key>
 			<string>Table Tool</string>
 			<key>name</key>
-			<key>category</key>
-			<string>Utilities</string>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
 			<true/>
