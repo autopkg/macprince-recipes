@@ -21,9 +21,9 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string> </string>
+			<string>The PLTW Kite Student Portal allows students to complete the Project Lead the Way (PLTW) Course Assessments.  PLTW assessments are standardized tests given during and at the completion of a PLTW course. The test measures a student’s progress and learning achievement in the course.</string>
 			<key>developer</key>
-			<string></string>
+			<string>Project Lead The Way</string>
 			<key>display_name</key>
 			<string>%NAME%</string>
 			<key>name</key>
