@@ -13,7 +13,7 @@
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
-		<string>WiFi Explorer Pro</string>
+		<string>WiFiExplorerPro</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -21,7 +21,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string> </string>
+			<string>Scan, monitor and troubleshoot wireless networks using your Mac's built-in Wi-Fi adapter.</string>
 			<key>developer</key>
 			<string>Adrian Granados</string>
 			<key>display_name</key>
