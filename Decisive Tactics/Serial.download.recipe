@@ -27,7 +27,7 @@
 				<key>url</key>
 				<string>%PAGE_URL%</string>
 				<key>re_pattern</key>
-				<string>(?P&lt;DOWNLOAD_PATH&gt;dl.*\.zip)</string>
+				<string>(?P&lt;DOWNLOAD_URL&gt;https://.*\.zip)</string>
 			</dict>
 		</dict>
 		<dict>
@@ -36,7 +36,7 @@
 				<key>filename</key>
 				<string>%NAME%.zip</string>
 				<key>url</key>
-				<string>%PAGE_URL%%DOWNLOAD_PATH%</string>
+				<string>%DOWNLOAD_URL%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
