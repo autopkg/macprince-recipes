@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of the Safe Exam Browser with config file for the Illinois State Board of Education's science assessment.</string>
+	<key>Identifier</key>
+	<string>com.github.macprince.download.ISBE-ISA</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>ISBE-ISA</string>
+		<key>TOP_URL</key>
+		<string>https://www.isbe.net</string>
+	</dict>
+	<key>MiniumumVersion</key>
+	<string>1.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+			<key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>%TOP_URL%/isa</string>
+				<key>re_pattern</key>
+				<string>(?P&lt;DOWNLOAD_PATH&gt;\/.*\.dmg)</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%.dmg</string>
+				<key>url</key>
+				<string>%TOP_URL%%DOWNLOAD_PATH%</string>
+			</dict>
+		</dict>
+        <dict>   
+            <key>Processor</key>   
+            <string>CodeSignatureVerifier</string>   
+            <key>Arguments</key>   
+            <dict>   
+                <key>input_path</key>   
+                <string>%pathname%/ISBE-ISA*.pkg</string>
+                <key>expected_authority_names</key>
+                <array>
+                    <string>Developer ID Installer: Breakthrough Tecnologies LLC (8RKH55NWV4)</string>
+                    <string>Developer ID Certification Authority</string>
+                    <string>Apple Root CA</string>
+                </array>
+            </dict>
+        </dict>
+	</array>
+</dict>
+</plist>
