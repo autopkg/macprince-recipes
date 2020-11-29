@@ -24,6 +24,8 @@
 			<string>Fork of the Arduino IDE that supports the PJRC Teensy boards.</string>
 			<key>developer</key>
 			<string>PJRC</string>
+			<key>category</key>
+			<string>Development Tools</string>
 			<key>display_name</key>
 			<string>Teensyduino</string>
 			<key>name</key>
