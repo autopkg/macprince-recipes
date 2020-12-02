@@ -24,6 +24,8 @@
 			<string>One click testing for Intel &amp; Apple Silicon CPUs.</string>
 			<key>developer</key>
 			<string>DigiDNA</string>
+            <key>category</key>
+            <string>Admin Tools</string>
 			<key>display_name</key>
 			<string>Silicon</string>
 			<key>name</key>
