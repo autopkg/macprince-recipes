@@ -10,8 +10,6 @@
 	<string>com.github.macprince.pkg.TableTool</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>at.eggerapps.tabletool</string>
 		<key>NAME</key>
 		<string>Table Tool</string>
 	</dict>

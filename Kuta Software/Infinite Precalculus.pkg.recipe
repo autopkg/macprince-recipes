@@ -10,8 +10,6 @@
 	<string>com.github.macprince.pkg.InfinitePrecalculus</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.kutasoftware.InfinitePrecalculus</string>
 		<key>NAME</key>
 		<string>Infinite Precalculus</string>
 	</dict>

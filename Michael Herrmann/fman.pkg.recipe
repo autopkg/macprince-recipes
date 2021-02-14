@@ -10,8 +10,6 @@
 	<string>com.github.macprince.pkg.fman</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>io.fman.fman</string>
 		<key>NAME</key>
 		<string>fman</string>
 	</dict>

@@ -10,8 +10,6 @@
 	<string>com.github.macprince.pkg.AppleEvents</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>br.com.guilhermerambo.Apple-Events</string>
 		<key>NAME</key>
 		<string>Apple Events</string>
 	</dict>

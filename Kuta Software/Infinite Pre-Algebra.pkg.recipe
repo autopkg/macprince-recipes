@@ -10,8 +10,6 @@
 	<string>com.github.macprince.pkg.InfinitePre-Algebra</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.kutasoftware.InfinitePreAlgebra</string>
 		<key>NAME</key>
 		<string>Infinite Pre-Algebra</string>
 	</dict>
