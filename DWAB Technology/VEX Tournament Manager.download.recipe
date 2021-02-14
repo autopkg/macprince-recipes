@@ -10,10 +10,12 @@
 	<string>com.github.macprince.download.VEXTournamentManager</string>
 	<key>Input</key>
 	<dict>
-		<key>DOWNLOAD_URL</key>
-		<string>https://files.dwabtech.com/vextm/releases/2019_20.1.1/VEXTournamentManager-v2019_20.1.1.dmg</string>
 		<key>NAME</key>
-		<string>VEX Tournament Manager</string>
+		<string>VEXTournamentManager</string>
+		<key>PAGE_URL</key>
+		<string>https://vextm.dwabtech.com</string>
+		<key>USER_AGENT</key>
+		<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Safari/605.1.15</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -22,10 +24,37 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>url</key>
+				<string>%PAGE_URL%</string>
+				<key>re_pattern</key>
+				<string>(?P&lt;DOWNLOAD_URL&gt;https:.*.dmg)</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>%PAGE_URL%</string>
+				<key>re_pattern</key>
+				<string>Version (?P&lt;version&gt;([0-9_.]+))</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>filename</key>
-				<string>%NAME%.dmg</string>
+				<string>%NAME%-%version%.dmg</string>
 				<key>url</key>
 				<string>%DOWNLOAD_URL%</string>
+                <key>request_headers</key>
+                <dict>
+                    <key>user-agent</key>
+                    <string>%USER_AGENT%</string>
+                </dict>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -38,23 +67,12 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%pathname%/VEX Tournament Manager.app</string>
+				<string>%RECIPE_CACHE_DIR%/downloads/%NAME%-%version%.dmg/VEX Tournament Manager.app</string>
 				<key>requirement</key>
 				<string>identifier "VEX Tournament Manager" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = V762UB84KY</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>input_plist_path</key>
-				<string>%pathname%/VEX Tournament Manager.app/Contents/Info.plist</string>
-				<key>plist_version_key</key>
-				<string>CFBundleShortVersionString</string>
-			</dict>
-			<key>Processor</key>
-			<string>Versioner</string>
 		</dict>
 	</array>
 </dict>
