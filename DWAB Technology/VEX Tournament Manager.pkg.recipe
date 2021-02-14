@@ -10,8 +10,6 @@
 	<string>com.github.macprince.pkg.VEXTournamentManager</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>VEX Tournament Manager</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -22,6 +20,13 @@
 		<dict>
 			<key>Processor</key>
 			<string>AppPkgCreator</string>
+			<key>Arguments</key>
+			<dict>
+				<key>bundleid</key>
+				<string>com.dwabtech.vextm</string>
+				<key>pkg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
+			</dict>
 		</dict>
 	</array>
 </dict>
