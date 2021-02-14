@@ -10,8 +10,6 @@
 	<string>com.github.macprince.pkg.Serial</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.decisivetactics.serial.direct</string>
 		<key>NAME</key>
 		<string>Serial</string>
 	</dict>

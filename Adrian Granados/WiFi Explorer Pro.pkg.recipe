@@ -10,8 +10,6 @@
 	<string>com.github.macprince.pkg.WiFiExplorerPro</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.adriangranados.wifiexplorerpro</string>
 		<key>NAME</key>
 		<string>WiFi Explorer Pro</string>
 	</dict>

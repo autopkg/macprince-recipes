@@ -10,8 +10,6 @@
 	<string>com.github.macprince.pkg.InfiniteGeometry</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.kutasoftware.InfiniteGeometry</string>
 		<key>NAME</key>
 		<string>Infinite Geometry</string>
 	</dict>

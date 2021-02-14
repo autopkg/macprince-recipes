@@ -10,8 +10,6 @@
 	<string>com.github.macprince.pkg.aText</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.trankynam.aText</string>
 		<key>NAME</key>
 		<string>aText</string>
 	</dict>

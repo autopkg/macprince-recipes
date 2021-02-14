@@ -10,8 +10,6 @@
 	<string>com.github.macprince.pkg.TunesKitM4VConverter</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.TunesKit.TunesKitM4VConverter</string>
 		<key>NAME</key>
 		<string>TunesKit M4V Converter</string>
 	</dict>
