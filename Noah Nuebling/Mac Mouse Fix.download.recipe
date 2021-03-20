@@ -56,9 +56,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Mouse Fix.prefPane</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Mac Mouse Fix.app</string>
 				<key>requirement</key>
-				<string>identifier "com.nuebling.mousefix" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: noah.nuebling@gmail.com (G5V6K6HNHX)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
+				<string>identifier "com.nuebling.mac-mouse-fix" and anchor apple generic and certificate leaf[subject.CN] = "Apple Development: noah.nuebling@gmail.com (G5V6K6HNHX)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
@@ -67,7 +67,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Mouse Fix.prefpane/Contents/Info.plist</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Mac Mouse Fix.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>

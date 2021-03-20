@@ -24,8 +24,6 @@
 			<string>A simple way to make your mouse better.</string>
 			<key>developer</key>
 			<string>Noah Nuebling</string>
-            <key>category</key>
-            <string>Utilities</string>
 			<key>display_name</key>
 			<string>Mac Mouse Fix</string>
 			<key>name</key>
@@ -54,24 +52,6 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>installs_item_paths</key>
-				<array>
-					<string>/Library/PreferencePanes/Mouse Fix.prefpane</string>
-				</array>
-			</dict>
-			<key>Processor</key>
-			<string>MunkiInstallsItemsCreator</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>additional_makepkginfo_options</key>
-				<array>
-					<string>--itemname</string>
-					<string>Mouse Fix.prefpane</string>
-					<string>--destinationpath</string>
-					<string>/Library/PreferencePanes</string>
-				</array>
 				<key>pkg_path</key>
 				<string>%dmg_path%</string>
 				<key>repo_subdirectory</key>
