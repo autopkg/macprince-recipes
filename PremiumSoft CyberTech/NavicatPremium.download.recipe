@@ -20,10 +20,30 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>curl_opts</key>
+				<array>
+					<string>--data-raw</string>
+					<string>product=navicatess_premium_en.dmg&amp;location=1&amp;support=&amp;linux_dist=</string>
+				</array>
+				<key>re_pattern</key>
+				<string>navicatess\S*_premium_en\.dmg</string>
+				<key>result_output_var_name</key>
+				<string>match</string>
+				<key>url</key>
+				<string>https://www.navicat.com/includes/Navicat/direct_download.php</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>curl_opts</key>
+				<array/>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
 				<key>url</key>
-				<string>https://download3.navicat.com/download/navicat150_premium_en.dmg</string>
+				<string>https://download3.navicat.com/download/%match%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
