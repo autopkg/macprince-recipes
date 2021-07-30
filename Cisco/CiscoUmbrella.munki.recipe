@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of Cisco Umbrella Roaming Client and imports it into Munki.</string>
+	<key>Identifier</key>
+	<string>com.github.macprince.munki.CiscoUmbrella</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/%NAME%</string>
+		<key>NAME</key>
+		<string>CiscoUmbrella</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>description</key>
+			<string>The Umbrella roaming client is a very lightweight DNS client that runs on your Windows or macOS computers. It is not a VPN client or a local anti-virus engine. It allows Umbrella security and policy-based protection, including our intelligent proxy, to be enforced no matter the network to which you are connected. Whether you're at the office, your hotel, a coffee shop, or using a mobile hotspot, the Umbrella roaming client enforces policies set by you in Umbrella. It includes the ability to deliver granular policy enforcement and reporting information about the specific computer identity or even the logged-in Active Directory user. </string>
+			<key>developer</key>
+			<string>Cisco</string>
+			<key>display_name</key>
+			<string>Cisco Umbrella</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.rtrouton.pkg.ciscoumbrella</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+		</dict>
+	</array>
+</dict>
+</plist>
