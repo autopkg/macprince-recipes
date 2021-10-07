@@ -11,7 +11,9 @@
 	<key>Input</key>
 	<dict>
 		<key>SEARCH_URL</key>
-		<string>https://support.vitalsource.com/hc/en-us/articles/360014107913</string>
+		<string>https://api.vitalsource.com/v3/versions/check</string>
+		<key>USER_AGENT</key>
+		<string>VitalSource Bookshelf/10.0.0 (Mac OS/Version 10.15.7 (Build 19H1419); en-US) Sparkle/1.0</string>
 		<key>NAME</key>
 		<string>VitalSource Bookshelf</string>
 	</dict>
@@ -28,6 +30,11 @@
 				<string>(?P&lt;DOWNLOAD_URL&gt;https:.*.dmg)</string>
 				<key>url</key>
 				<string>%SEARCH_URL%</string>
+				<key>request_headers</key>
+				<dict>
+					<key>user-agent</key>
+					<string>%USER_AGENT%</string>
+				</dict>
 			</dict>
 		</dict>
 		<dict>
