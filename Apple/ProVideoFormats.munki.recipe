@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads the latest update of the Pro Video Formats provided by Apple for their pro apps, and imports it into Munki.
+
+*** WARNING: If you are not running macOS Mojave 10.14.5 or later, you should manually download
+    Pro Video Formats 2.0.7, the terminal version for OS X 10.11:
+    https://support.apple.com/kb/DL1947
+    You can use the -p or --pkg option when running your child recipe to process the installer if desired
+    (e.g., to load version 2.0.7 into your management system). ***
+    
+*** Note 1: This Recipe requires an external processor. You must have Nate Felton's recipe repo
+    available in your cache: com.github.autopkg.n8felton-recipes ***
+*** Note 2: The downloaded installer is an updater that requires that you have one of the following installed:
+    * Final Cut Pro X
+    * Compressor 4.1
+    * Motion 4.0 or later
+    Having that software installed means you also agreed to the appropriate Software License Agreement(s).
+    Version 2.1 and later requires macOS 10.14.3 or later. *** </string>
+    <key>Identifier</key>
+    <string>com.github.macprince.munki.ProVideoFormats</string>
+    <key>Input</key>
+    <dict>
+        <key>MUNKI_REPO_SUBDIR</key>
+        <string>Plugins</string>
+        <key>NAME</key>
+        <string>ProVideoFormats</string>
+    	<key>pkginfo</key>
+    	<dict>
+    		<key>catalogs</key>
+    		<array>
+    			<string>testing</string>
+    		</array>
+            <key>display_name</key>
+            <string>Pro Video Formats</string>
+            <key>category</key>
+            <string>Video</string>
+            <key>developer</key>
+            <string>Apple</string>
+    		<key>description</key>
+    		<string>The Pro Video Formats package provides support for the following codecs that are used in professional video workflows:        
+
+Apple ProRes RAW and ProRes RAW HQ*        
+Apple Intermediate Codec
+Avid DNxHD® / Avid DNxHR® decoder
+AVC-Intra 50 / 100 / 200 / 4:4:4 / LT
+AVC-LongG 
+XAVC 
+XF-AVC
+XF-HEVC
+DVCPRO HD
+HDV
+XDCAM EX / HD / HD422
+MPEG IMX
+Uncompressed 4:2:2</string>
+    		<key>name</key>
+    		<string>%NAME%</string>
+    		<key>unattended_install</key>
+    		<true/>
+    	</dict>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.3.0</string>
+    <key>ParentRecipe</key>
+    <string>com.github.jazzace.download.ProVideoFormats</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>pkg_path</key>
+                <string>%pathname%</string>
+                <key>repo_subdirectory</key>
+                <string>%MUNKI_REPO_SUBDIR%</string>
+            </dict>
+            <key>Processor</key>
+            <string>MunkiImporter</string>
+        </dict>
+    </array>
+</dict>
+</plist>
