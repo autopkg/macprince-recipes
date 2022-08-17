@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads and installs the latest version of Mist, a command-line tool that automatically generates macOS Installer Disk Images and Packages.. The package will be installed to /usr/local/bin.</string>
+    <key>Identifier</key>
+    <string>com.github.macprince.install.mist-cli</string>
+    <key>Input</key>
+    <dict>
+			<key>NAME</key>
+			<string>mist</string>
+		</dict>
+    <key>MinimumVersion</key>
+    <string>1.0.0</string>
+    <key>ParentRecipe</key>
+    <string>com.github.macprince.download.mist-cli</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Processor</key>
+            <string>Installer</string>
+            <key>Arguments</key>
+            <dict>
+                <key>pkg_path</key>
+                <string>%pathname%</string>
+            </dict>
+        </dict>
+    </array>
+</dict>
+</plist>
