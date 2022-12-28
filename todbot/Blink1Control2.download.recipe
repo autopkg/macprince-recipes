@@ -12,6 +12,8 @@
 	<dict>
 		<key>NAME</key>
 		<string>Blink1Control2</string>
+        <key>GITHUB_ARCH</key>
+        <string>x64</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -21,7 +23,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>asset_regex</key>
-				<string>.*\.dmg$</string>
+				<string>.*%GITHUB_ARCH%\.dmg$</string>
 				<key>github_repo</key>
 				<string>todbot/Blink1Control2</string>
 			</dict>
@@ -32,7 +34,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%-%version%.dmg</string>
+				<string>%NAME%-%GITHUB_ARCH%-%version%.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
