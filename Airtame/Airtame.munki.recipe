@@ -38,6 +38,23 @@
 			<string>%NAME%</string>
 			<key>unattended_install</key>
 			<true/>
+            <key>preinstall_script</key>
+            <string>#!/bin/sh
+
+## This patches over a bug with Airtame's own postinstall script in the .pkg that installs their audio driver.
+## They're trying to copy to /Library/Audio/Plug-Ins/HAL which doesn't exist, so the contents of the driver end up there instead.
+
+HAL_DIRECTORY="/Library/Audio/Plug-Ins/HAL"
+
+if [ ! -d "$HAL_DIRECTORY" ]; then
+    echo "Audio/Plug-ins/HAL directory does not exist, creating"
+    mkdir -p "$HAL_DIRECTORY"
+fi
+
+if [ -d "$HAL_DIRECTORY/Contents" ]; then
+    echo "Broken previous AirtameAudio.driver install found, cleaning up"
+    rm -r "$HAL_DIRECTORY/Contents"
+fi</string>
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
