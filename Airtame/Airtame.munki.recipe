@@ -49,7 +49,6 @@ HAL_DIRECTORY="/Library/Audio/Plug-Ins/HAL"
 if [ ! -d "$HAL_DIRECTORY" ]; then
     echo "Audio/Plug-ins/HAL directory does not exist, creating"
     mkdir -p "$HAL_DIRECTORY"
-    return
 fi
 
 if [ -d "$HAL_DIRECTORY/Contents" ]; then
