@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of aText.</string>
+	<string>Downloads the legacy (v2) version of aText.</string>
 	<key>Identifier</key>
-	<string>com.github.macprince.download.aText</string>
+	<string>com.github.macprince.download.aTextLegacy</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>aText</string>
+		<string>aTextLegacy</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>

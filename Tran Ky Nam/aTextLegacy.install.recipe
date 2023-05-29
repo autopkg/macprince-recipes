@@ -5,9 +5,9 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v1.1.2 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Installs the latest version of aText.</string>
+	<string>Installs the legacy (v2) version of aText.</string>
 	<key>Identifier</key>
-	<string>com.github.macprince.install.aText</string>
+	<string>com.github.macprince.install.aTextLegacy</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
@@ -16,7 +16,7 @@
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.macprince.download.aText</string>
+	<string>com.github.macprince.download.aTextLegacy</string>
 	<key>Process</key>
 	<array>
 		<dict>

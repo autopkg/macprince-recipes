@@ -5,15 +5,15 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v1.1.2 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of aText and imports it into Munki.</string>
+	<string>Downloads the legacy version of aText (v2) and imports it into Munki.</string>
 	<key>Identifier</key>
-	<string>com.github.macprince.munki.aText</string>
+	<string>com.github.macprince.munki.aTextLegacy</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
-		<string>aText</string>
+		<string>aTextLegacy</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -35,7 +35,7 @@
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.macprince.download.aText</string>
+	<string>com.github.macprince.download.aTextLegacy</string>
 	<key>Process</key>
 	<array>
 		<dict>
