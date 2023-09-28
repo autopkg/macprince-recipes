@@ -5,7 +5,9 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Airtame and imports it into Munki.</string>
+	<string>Downloads the latest version of Airtame and imports it into Munki.
+
+Set the DERIVE_MIN_OS variable to a non-empty string to set the minimum_os_version via MunkiInstallsItemsCreator. This requires a minimum AutoPkg version of 2.7 please update if you're not already running it.</string>
 	<key>Identifier</key>
 	<string>com.github.macprince.munki.Airtame</string>
 	<key>Input</key>
@@ -14,6 +16,8 @@
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
 		<string>Airtame</string>
+		<key>DERIVE_MIN_OS</key>
+		<string>YES</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>blocking_applications</key>
@@ -29,7 +33,7 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string> </string>
+			<string>The most flexible wireless content sharing technology.</string>
 			<key>developer</key>
 			<string>AIRTAME APS</string>
 			<key>display_name</key>
@@ -38,8 +42,8 @@
 			<string>%NAME%</string>
 			<key>unattended_install</key>
 			<true/>
-            <key>preinstall_script</key>
-            <string>#!/bin/sh
+			<key>preinstall_script</key>
+			<string>#!/bin/sh
 
 ## This patches over a bug with Airtame's own postinstall script in the .pkg that installs their audio driver.
 ## They're trying to copy to /Library/Audio/Plug-Ins/HAL which doesn't exist, so the contents of the driver end up there instead.
@@ -47,22 +51,67 @@
 HAL_DIRECTORY="/Library/Audio/Plug-Ins/HAL"
 
 if [ ! -d "$HAL_DIRECTORY" ]; then
-    echo "Audio/Plug-ins/HAL directory does not exist, creating"
-    mkdir -p "$HAL_DIRECTORY"
+	echo "Audio/Plug-ins/HAL directory does not exist, creating"
+	mkdir -p "$HAL_DIRECTORY"
 fi
 
 if [ -d "$HAL_DIRECTORY/Contents" ]; then
-    echo "Broken previous AirtameAudio.driver install found, cleaning up"
-    rm -r "$HAL_DIRECTORY/Contents"
+	echo "Broken previous AirtameAudio.driver install found, cleaning up"
+	rm -r "$HAL_DIRECTORY/Contents"
 fi</string>
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.0</string>
+	<string>2.7</string>
 	<key>ParentRecipe</key>
 	<string>com.github.macprince.download.Airtame</string>
 	<key>Process</key>
 	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked</string>
+				<key>flat_pkg_path</key>
+				<string>%pathname%</string>
+				<key>purge_destination</key>
+				<true/>
+			</dict>
+			<key>Processor</key>
+			<string>FlatPkgUnpacker</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/Applications</string>
+				<key>pkg_payload_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpacked/com.airtame.airtame-application.pkg/Payload</string>
+				<key>purge_destination</key>
+				<true/>
+			</dict>
+			<key>Processor</key>
+			<string>PkgPayloadUnpacker</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>faux_root</key>
+				<string>%RECIPE_CACHE_DIR%</string>
+				<key>installs_item_paths</key>
+				<array>
+					<string>/Applications/Airtame.app</string>
+				</array>
+				<key>derive_minimum_os_version</key>
+				<string>%DERIVE_MIN_OS%</string>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiInstallsItemsCreator</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>MunkiPkginfoMerger</string>
+		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
@@ -73,6 +122,18 @@ fi</string>
 			</dict>
 			<key>Processor</key>
 			<string>MunkiImporter</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>path_list</key>
+				<array>
+					<string>%RECIPE_CACHE_DIR%/unpacked</string>
+					<string>%RECIPE_CACHE_DIR%/Applications</string>
+				</array>
+			</dict>
+			<key>Processor</key>
+			<string>PathDeleter</string>
 		</dict>
 	</array>
 </dict>
