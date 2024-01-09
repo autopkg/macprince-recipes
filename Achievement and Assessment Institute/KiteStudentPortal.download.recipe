@@ -12,8 +12,8 @@
 	<dict>
 		<key>APP_FILENAME</key>
 		<string>Kite Student Portal</string>
-        <key>PAGE_URL</key>
-        <string>https://dynamiclearningmaps.org/kite</string>
+        <key>DOWNLOAD_URL</key>
+        <string>https://files.kiteaai.org/installers/studentportal/latest/mac/Kite%20Student%20Portal.dmg</string>
 		<key>NAME</key>
 		<string>KiteStudentPortal</string>
 	</dict>
@@ -24,34 +24,10 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>url</key>
-				<string>%PAGE_URL%</string>
-				<key>re_pattern</key>
-				<string>(?P&lt;DOWNLOAD_URL&gt;https:.*.dmg)</string>
-			</dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
-		</dict>
-		 <dict>
-            <key>Arguments</key>
-            <dict>
-                <key>find</key>
-                <string> </string>
-                <key>input_string</key>
-                <string>%DOWNLOAD_URL%</string>
-                <key>replace</key>
-                <string>%20</string>
-            </dict>
-            <key>Processor</key>
-            <string>com.github.homebysix.FindAndReplace/FindAndReplace</string>
-        </dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
 				<key>url</key>
-				<string>%output_string%</string>
+				<string>%DOWNLOAD_URL%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
