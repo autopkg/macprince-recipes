@@ -4,17 +4,19 @@
 <dict>
 	<key>Comment</key>
 	<string>Created with Recipe Robot v2.3.1 (https://github.com/homebysix/recipe-robot)
-		ARCHITECTURE variable can be either 'amd64' or 'aarch64'</string>
+    ARCHITECTURE variable can be either 'amd64' or 'aarch64'</string>
 	<key>Description</key>
-	<string>Downloads the latest version of MM Desktop.</string>
+	<string>Downloads the latest version of Merlyn Origin.</string>
 	<key>Identifier</key>
-	<string>com.github.macprince.download.MMDesktop</string>
+	<string>com.github.macprince.download.MerlynOrigin</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>MM Desktop</string>
+		<string>MerlynOrigin</string>
+        <key>APPNAME</key>
+        <string>Merlyn Origin</string>
 		<key>ARCHITECTURE</key>
-		<string>amd64</string>
+		<string>aarch64</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>
@@ -33,7 +35,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%.zip</string>
+				<string>%NAME%-%ARCHITECTURE%.zip</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -48,7 +50,7 @@
 				<key>archive_path</key>
 				<string>%pathname%</string>
 				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%-%ARCHITECTURE%</string>
 				<key>purge_destination</key>
 				<true/>
 			</dict>
@@ -59,7 +61,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/MM Desktop.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%-%ARCHITECTURE%/%APPNAME%.app</string>
 				<key>requirement</key>
 				<string>identifier "org.merlyn.desktopapp" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = F4VVBGRUYY</string>
 			</dict>
@@ -70,7 +72,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/MM Desktop.app/Contents/Info.plist</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%-%ARCHITECTURE%/%APPNAME%.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>

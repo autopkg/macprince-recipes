@@ -5,27 +5,29 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v2.3.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Installs the latest version of MM Desktop.</string>
+	<string>Installs the latest version of Merlyn Origin.</string>
 	<key>Identifier</key>
-	<string>com.github.macprince.install.MMDesktop</string>
+	<string>com.github.macprince.install.MerlynOrigin</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>MM Desktop</string>
+		<string>MerlynOrigin</string>
+        <key>APPNAME</key>
+        <string>Merlyn Origin</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>
 	<key>ParentRecipe</key>
-	<string>com.github.macprince.download.MMDesktop</string>
+	<string>com.github.macprince.download.MerlynOrigin</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>dmg_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%-%ARCHITECTURE%.dmg</string>
 				<key>dmg_root</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%-%ARCHITECTURE%</string>
 			</dict>
 			<key>Processor</key>
 			<string>DmgCreator</string>
@@ -41,7 +43,7 @@
 						<key>destination_path</key>
 						<string>/Applications</string>
 						<key>source_item</key>
-						<string>MM Desktop.app</string>
+						<string>%APPNAME%.app</string>
 					</dict>
 				</array>
 			</dict>
