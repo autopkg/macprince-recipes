@@ -5,13 +5,15 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Installs the latest version of CEmu.</string>
+	<string>Installs the latest version of CEmu. GITHUB_ARCHITECTURE can be either 'arm' or 'intel'.</string>
 	<key>Identifier</key>
 	<string>com.github.macprince.install.CEmu</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
 		<string>CEmu</string>
+        <key>GITHUB_ARCHITECTURE</key>
+        <string>arm</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
