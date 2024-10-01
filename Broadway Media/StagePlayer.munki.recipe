@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of StagePlayer and imports it into Munki.</string>
+	<key>Identifier</key>
+	<string>com.github.macprince.munki.StagePlayer</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/%NAME%</string>
+		<key>NAME</key>
+		<string>StagePlayer</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>description</key>
+			<string>StagePlayer is the Mac and Windows PC software for digital scenery from Broadway Media. Broadway Media delivers all licensed Show Collections in a pre-programmed format to match the script and all other digital scenery with the ability to customize for your production.  Features include seamless transitions, high-powered computing to eliminate video latency, the ability to pause videos, and transition to a blackout - all at the click of a button.</string>
+			<key>developer</key>
+			<string>Broadway Media</string>
+			<key>display_name</key>
+			<string>StagePlayer</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>category</key>
+			<string>Live Production</string>
+			<key>unattended_install</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.3</string>
+	<key>ParentRecipe</key>
+	<string>com.github.macprince.download.StagePlayer</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%pathname%</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+		</dict>
+	</array>
+</dict>
+</plist>
