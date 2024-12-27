@@ -12,8 +12,6 @@
 	<dict>
 		<key>NAME</key>
 		<string>VEXTournamentManager</string>
-		<key>PAGE_URL</key>
-		<string>https://vextm.dwabtech.com</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -23,20 +21,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
-				<string>%PAGE_URL%</string>
+				<string>https://vextm.dwabtech.com</string>
 				<key>re_pattern</key>
-				<string>(?P&lt;DOWNLOAD_URL&gt;https:.*.dmg)</string>
-			</dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>url</key>
-				<string>%PAGE_URL%</string>
-				<key>re_pattern</key>
-				<string>Version (?P&lt;version&gt;([0-9_.]+))</string>
+				<string>href="//(?P&lt;download_url&gt;vextm\.dwabtech\.com/releases/v[\d\._]+/VEXTournamentManager-v(?P&lt;version&gt;[\d\._]+)\.dmg)"</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
@@ -47,7 +34,7 @@
 				<key>filename</key>
 				<string>%NAME%-%version%.dmg</string>
 				<key>url</key>
-				<string>%DOWNLOAD_URL%</string>
+				<string>https://%download_url%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
