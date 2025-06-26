@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>LingonX</string>
 		<key>MAJOR_VERSION</key>
-		<string>7</string>
+		<string>10</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -25,7 +25,7 @@
 				<key>filename</key>
 				<string>%NAME%%MAJOR_VERSION%.zip</string>
 				<key>url</key>
-				<string>https://www.peterborgapps.com/downloads/LingonX%MAJOR_VERSION%.zip</string>
+				<string>https://www.peterborgapps.com/downloads/LingonPro%MAJOR_VERSION%.zip</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -51,9 +51,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%%MAJOR_VERSION%/Lingon X.app</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%%MAJOR_VERSION%/Lingon Pro.app</string>
 				<key>requirement</key>
-				<string>anchor apple generic and identifier "com.peterborgapps.LingonX%MAJOR_VERSION%" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = HT76L9L9RG)</string>
+				<string>anchor apple generic and identifier "com.peterborgapps.LingonPro%MAJOR_VERSION%" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = HT76L9L9RG)</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
@@ -62,7 +62,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%%MAJOR_VERSION%/Lingon X.app/Contents/Info.plist</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%%MAJOR_VERSION%/Lingon Pro.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>
