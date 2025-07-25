@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads the latest update of the Final Cut Pro Content provided by Apple, and imports it into Munki.
+    
+*** Note 1: This Recipe requires an external processor. You must have Nate Felton's recipe repo
+    available in your cache: com.github.autopkg.n8felton-recipes ***
+*** Note 2: The downloaded installer is an updater that requires that you have one of the following installed:
+    * Final Cut Pro X
+    Having that software installed means you also agreed to the appropriate Software License Agreement(s).*** </string>
+    <key>Identifier</key>
+    <string>com.github.macprince.munki.FinalCutProContent</string>
+    <key>Input</key>
+    <dict>
+        <key>MUNKI_REPO_SUBDIR</key>
+        <string>Plugins</string>
+        <key>NAME</key>
+        <string>FinalCutProContent</string>
+    	<key>pkginfo</key>
+    	<dict>
+    		<key>catalogs</key>
+    		<array>
+    			<string>testing</string>
+    		</array>
+            <key>display_name</key>
+            <string>Final Cut Pro Content</string>
+            <key>category</key>
+            <string>Video</string>
+            <key>developer</key>
+            <string>Apple</string>
+    		<key>description</key>
+    		<string>
+                This update adds the following content for use in Final Cut Pro:
+
+Sound Effects: Over 1300 rights-free sound effects installed into the Audio Browser of Final Cut Pro.
+
+Audio Effect Presets: Additional preset effects for the Space Designer plug-in.
+
+This update is recommended for all users of Final Cut Pro.
+            </string>
+    		<key>name</key>
+    		<string>%NAME%</string>
+    		<key>unattended_install</key>
+    		<true/>
+    	</dict>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.3.0</string>
+    <key>ParentRecipe</key>
+    <string>com.github.jazzace.download.FCPContent</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>pkg_path</key>
+                <string>%pathname%</string>
+                <key>repo_subdirectory</key>
+                <string>%MUNKI_REPO_SUBDIR%</string>
+            </dict>
+            <key>Processor</key>
+            <string>MunkiImporter</string>
+        </dict>
+    </array>
+</dict>
+</plist>
