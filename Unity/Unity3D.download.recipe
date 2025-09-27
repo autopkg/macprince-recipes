@@ -10,6 +10,10 @@
 	<dict>
 		<key>NAME</key>
 		<string>Unity</string>
+		<key>MAJOR_VERSION</key>
+		<string>6000</string>
+		<key>ARCH</key>
+		<string>arm64</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>
@@ -19,9 +23,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>major_version</key>
-				<string>6000</string>
+				<string>%MAJOR_VERSION%</string>
 				<key>arch</key>
-				<string>arm64</string>
+				<string>%ARCH%</string>
 			</dict>
 			<key>Processor</key>
 			<string>Unity3DURLProvider</string>
