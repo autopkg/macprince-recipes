@@ -44,7 +44,8 @@ mac-server
 webgl
 windows-mono
 windows-server
-"""
+""",
+            "required": True
         }
         
     }
