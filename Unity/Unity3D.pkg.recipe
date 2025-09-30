@@ -31,6 +31,17 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>path_list</key>
+				<array>
+					<string>%RECIPE_CACHE_DIR%/Unpack/Unity.pkg.tmp/Scripts/preinstall</string>
+				</array>
+			</dict>
+			<key>Processor</key>
+			<string>PathDeleter</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>target_file</key>
 				<string>%RECIPE_CACHE_DIR%/Unpack/Unity.pkg.tmp/Scripts/postinstall</string>
 				<key>patch_string</key>
