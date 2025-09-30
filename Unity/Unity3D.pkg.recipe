@@ -45,27 +45,6 @@ exit 0
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>target_file</key>
-				<string>%RECIPE_CACHE_DIR%/Unpack/Unity.pkg.tmp/Scripts/postinstall</string>
-				<key>patch_string</key>
-				<string>--- orig/postinstall	2025-09-26 19:23:03
-+++ fix/postinstall	2025-09-26 19:24:56
-@@ -7,8 +7,6 @@
- chown -R root:admin &quot;$DSTVOLUME$DSTROOT&quot;
- chmod -R g+w &quot;$DSTVOLUME$DSTROOT&quot;
- 
--mv &quot;${InstallPath}&quot; &quot;${FinalInstallPath}&quot;
--
- if [ ! -d &quot;/Library/Application Support/Unity&quot; ]; then
- 	mkdir &quot;/Library/Application Support/Unity&quot;
- 	chmod a+rwx &quot;/Library/Application Support/Unity&quot;</string>
-			</dict>
-			<key>Processor</key>
-			<string>com.github.ccaviness.processors/FilePatcher</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>source_flatpkg_dir</key>
 				<string>%RECIPE_CACHE_DIR%/Unpack/</string>
 				<key>destination_pkg</key>
