@@ -31,13 +31,16 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>path_list</key>
-				<array>
-					<string>%RECIPE_CACHE_DIR%/Unpack/Unity.pkg.tmp/Scripts/preinstall</string>
-				</array>
+				<key>file_path</key>
+				<string>%RECIPE_CACHE_DIR%/Unpack/Unity.pkg.tmp/Scripts/preinstall</string>
+				<key>file_content</key>
+				<string>#!/bin/sh
+
+exit 0
+				</string>
 			</dict>
 			<key>Processor</key>
-			<string>PathDeleter</string>
+			<string>FileCreator</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
