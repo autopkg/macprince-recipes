@@ -33,6 +33,10 @@ class Unity3DURLProvider(URLGetter):
         "arch": {
             "description": "Architecture, can be arm64 or x86_64",
             "required": True
+        },
+        "stream": {
+            "description": "Release stream to use, can be SUPPORTED, LTS, or BETA.",
+            "required": True
         }
         
     }
@@ -41,7 +45,7 @@ class Unity3DURLProvider(URLGetter):
             "description": "Download URL for the latest version of Unity 3D."
         },
         "version": {
-            "description": "Latest full version number of Unity 3D"
+            "description": "Latest full version number of Unity 3D."
         }
     }
     description = __doc__
@@ -53,9 +57,10 @@ class Unity3DURLProvider(URLGetter):
             raise ProcessorError("Can't download %s: %s" % (FEED_URL, e))
 
         root = json.loads(json_string)
-        latest = [x for x in root['results'] if x['stream'] == "SUPPORTED"][0]
-        version = latest['version']
         arch = self.env['arch'].upper()
+        stream = self.env['stream'].upper()
+        latest = [x for x in root['results'] if x['stream'] == stream][0]
+        version = latest['version']
         mac = [x for x in latest['downloads'] if x['platform'] == "MAC_OS" if x['architecture'] == arch][0]
 
         self.env["version"] = version

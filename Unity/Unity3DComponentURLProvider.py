@@ -30,6 +30,10 @@ class Unity3DComponentURLProvider(URLGetter):
             "description": "Yearly or other major version of Unity 3D (four digits).",
             "required": True
         },
+        "stream": {
+            "description": "Release stream to use, can be SUPPORTED, LTS, or BETA.",
+            "required": True
+        },
         "component": {
             "description": """The component for Unity3D you want to download. Can be: 
 android
@@ -66,7 +70,8 @@ windows-server
             raise ProcessorError("Can't download %s: %s" % (FEED_URL, e))
 
         root = json.loads(json_string)
-        latest = [x for x in root['results'] if x['stream'] == "SUPPORTED"][0]
+        stream = self.env['stream'].upper()
+        latest = [x for x in root['results'] if x['stream'] == stream][0]
         mac = [x for x in latest['downloads'] if x['platform'] == "MAC_OS" if x['architecture'] == "ARM64"][0]
         component = [x for x in mac['modules'] if x['id'] == self.env['component']][0]
 
