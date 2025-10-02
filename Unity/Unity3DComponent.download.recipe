@@ -26,6 +26,8 @@ windows-server
 		<string>Unity3DComponent-%COMPONENT%</string>
 		<key>MAJOR_VERSION</key>
 		<string>6000</string>
+		<key>STREAM</key>
+		<string>SUPPORTED</string>
 		<key>COMPONENT</key>
 		<string>ios</string>
 	</dict>
@@ -40,6 +42,8 @@ windows-server
 				<string>%MAJOR_VERSION%</string>
 				<key>component</key>
 				<string>%COMPONENT%</string>
+				<key>stream</key>
+				<string>%STREAM%</string>
 			</dict>
 			<key>Processor</key>
 			<string>Unity3DComponentURLProvider</string>
