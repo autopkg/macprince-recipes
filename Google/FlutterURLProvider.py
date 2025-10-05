@@ -56,7 +56,11 @@ class FlutterURLProvider(URLGetter):
         base_url = root['base_url']
         current_release = root['current_release'][self.env['channel']]
         releases = root['releases']
-        release = [x for x in releases if x['hash'] == current_release if x['channel'] == self.env['channel'] if x['dart_sdk_arch'] == self.env['arch']][0]
+        release = [x 
+                   for x in releases 
+                   if x['hash'] == current_release
+                   and x['channel'] == self.env['channel']
+                   and x['dart_sdk_arch'] == self.env['arch']][0]
         version = release['version']
 
         self.env["version"] = version
