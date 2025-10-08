@@ -28,12 +28,25 @@
 					<string>0775</string>
 					<key>etc/paths.d</key>
 					<string>0775</string>
+					<key>Scripts</key>
+					<string>0775</string>
 				</dict>
 				<key>pkgroot</key>
 				<string>%RECIPE_CACHE_DIR%/pkg</string>
 			</dict>
 			<key>Processor</key>
 			<string>PkgRootCreator</string>
+		</dict>
+				<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>source</key>
+				<string>%RECIPE_CACHE_DIR%/pkg/Scripts</string>
+				<key>target</key>
+				<string>%RECIPE_CACHE_DIR%/Scripts</string>
+			</dict>
+			<key>Processor</key>
+			<string>FileMover</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -47,6 +60,43 @@
 			</dict>
 			<key>Processor</key>
 			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>file_path</key>
+				<string>%RECIPE_CACHE_DIR%/pkg/etc/paths.d/flutter</string>
+				<key>file_content</key>
+				<string>/Users/Shared/flutter/bin</string>
+			</dict>
+			<key>Processor</key>
+			<string>FileCreator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>source</key>
+				<string>%RECIPE_CACHE_DIR%/pkg/Users/Shared/flutter/.git</string>
+				<key>target</key>
+				<string>%RECIPE_CACHE_DIR%/pkg/Users/Shared/flutter/git</string>
+			</dict>
+			<key>Processor</key>
+			<string>FileMover</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>file_path</key>
+				<string>%RECIPE_CACHE_DIR%/Scripts/postinstall</string>
+				<key>file_content</key>
+				<string>#!/bin/bash
+mv /Users/Shared/flutter/git /Users/Shared/flutter/.git
+				</string>
+				<key>file_mode</key>
+				<string>0755</string>
+			</dict>
+			<key>Processor</key>
+			<string>FileCreator</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -93,6 +143,8 @@
 					<string>%RECIPE_CACHE_DIR%/pkg</string>
 					<key>version</key>
 					<string>%version%</string>
+					<key>scripts</key>
+					<string>Scripts</string>
 				</dict>
 			</dict>
 			<key>Processor</key>
