@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v2.3.2 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Espanso.</string>
 	<key>Identifier</key>
@@ -21,7 +19,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>asset_regex</key>
-				<string>.*M1\.dmg$</string>
+				<string>.*Mac-Universal\.zip$</string>
 				<key>github_repo</key>
 				<string>espanso/espanso</string>
 			</dict>
@@ -32,7 +30,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%-%version%.dmg</string>
+				<string>%NAME%.zip</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -44,8 +42,21 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>archive_path</key>
+				<string>%pathname%</string>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%</string>
+				<key>purge_destination</key>
+				<false/>
+			</dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>input_path</key>
-				<string>%pathname%/Espanso.app</string>
+				<string>%RECIPE_CACHE_DIR%/espanso/Espanso.dmg/Espanso.app</string>
 				<key>requirement</key>
 				<string>identifier "com.federicoterzi.espanso" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "6424323YUH"</string>
 			</dict>
@@ -56,7 +67,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%pathname%/Espanso.app/Contents/Info.plist</string>
+				<string>%RECIPE_CACHE_DIR%/espanso/Espanso.dmg/Espanso.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>
