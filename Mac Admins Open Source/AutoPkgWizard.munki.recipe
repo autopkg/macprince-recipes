@@ -27,7 +27,7 @@
 			<key>description</key>
 			<string>AutoPkg Wizard - a macOS SwiftUI app for managing AutoPkg</string>
 			<key>developer</key>
-			<string>Graham Pugh</string>
+			<string>Mac Admins Open Source</string>
 			<key>display_name</key>
 			<string>AutoPkg Wizard</string>
 			<key>name</key>
