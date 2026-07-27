@@ -13,7 +13,7 @@
 		<key>FEED_URL</key>
 		<string>https://api.vitalsource.com/v3/versions/check</string>
 		<key>USER_AGENT</key>
-		<string>VitalSource Bookshelf/10.0.0 (Mac OS/Version 10.15.7 (Build 19H1419); en-US) Sparkle/1.0</string>
+		<string>VitalSource Bookshelf/11.0.0 (Mac OS/Version 26.6 (Build 25G72); en-US) Sparkle/1.0</string>
 		<key>NAME</key>
 		<string>VitalSource Bookshelf</string>
 	</dict>
