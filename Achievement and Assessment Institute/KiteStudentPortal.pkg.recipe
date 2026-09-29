@@ -3,42 +3,26 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Created with Recipe Robot v1.2.1 (https://github.com/homebysix/recipe-robot)</string>
+	<string>Created with Recipe Robot v2.5.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of KiteStudentPortal and creates a package.</string>
+	<string>Downloads the latest version of Kite Student Portal and creates a package.</string>
 	<key>Identifier</key>
 	<string>com.github.macprince.pkg.KiteStudentPortal</string>
 	<key>Input</key>
 	<dict>
-		<key>APP_FILENAME</key>
-		<string>Kite Student Portal</string>
 		<key>NAME</key>
-		<string>KiteStudentPortal</string>
+		<string>Kite Student Portal</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.0</string>
+	<string>2.3</string>
 	<key>ParentRecipe</key>
 	<string>com.github.macprince.download.KiteStudentPortal</string>
 	<key>Process</key>
 	<array>
-    <dict>
-        <key>Processor</key>
-        <string>com.github.gregneagle.autopkg.sharedprocessors/DeprecationWarning</string>
-        <key>Arguments</key>
-        <dict>
-            <key>warning_message</key>
-            <string>This recipe is now unnecessary, as KITE Student Portal is now distributed as a .pkg. Please use the .download recipe instead.</string>
-        </dict>
-    </dict>
-    <dict>   
-        <key>Processor</key>   
-        <string>StopProcessingIf</string>   
-        <key>Arguments</key>   
-        <dict>   
-            <key>predicate</key>   
-            <string>TRUEPREDICATE</string>
-        </dict>
-    </dict>
+		<dict>
+			<key>Processor</key>
+			<string>AppPkgCreator</string>
+		</dict>
 	</array>
 </dict>
 </plist>
