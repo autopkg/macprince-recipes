@@ -19,7 +19,9 @@
 	<array>
 		<dict>
 			<key>Arguments</key>
-			<dict>
+			<dict>				
+				<key>asset_regex</key>
+				<string>.*App\.zip$</string>
 				<key>github_repo</key>
 				<string>noah-nuebling/mac-mouse-fix</string>
 			</dict>
