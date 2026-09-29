@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>Blink1Control2</string>
         <key>GITHUB_ARCH</key>
-        <string>x64</string>
+        <string>arm64</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
