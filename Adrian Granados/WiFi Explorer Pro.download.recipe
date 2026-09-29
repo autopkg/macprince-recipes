@@ -19,6 +19,15 @@
 	<string>1.0.0</string>
 	<key>Process</key>
 	<array>
+		        <dict>
+            <key>Processor</key>
+            <string>DeprecationWarning</string>
+            <key>Arguments</key>
+            <dict>
+                <key>warning_message</key>
+                <string>This version of WiFi Explorer Pro has been replaced by WiFi Explorer Pro 3, which you can find recipes for in autopkg/dataJAR-recipes</string>
+            </dict>
+        </dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
